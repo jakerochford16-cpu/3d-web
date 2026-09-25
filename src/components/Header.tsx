@@ -7,7 +7,7 @@ export function Header() {
   const { totalItems } = useCart();
 
   return (
-    <header className="flex items-center justify-between border-b border-stone-800 px-6 py-5">
+    <header className="relative z-20 flex items-center justify-between border-b border-stone-800/60 bg-[var(--background)]/40 px-6 py-5 backdrop-blur-md">
       <Link
         href="/"
         className="font-[family-name:var(--font-display)] text-xl font-medium tracking-wide text-stone-50 italic"
