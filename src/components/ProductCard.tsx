@@ -6,21 +6,26 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <Link
       href={`/products/${product.slug}`}
-      className="group flex flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white transition-shadow hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-950"
+      className="group flex flex-col overflow-hidden rounded-2xl border border-stone-800 bg-stone-900/60 transition-colors hover:border-stone-700"
     >
       <ProductViewer3D
-        shape={product.shape}
-        color={product.color}
-        className="h-56 w-full bg-zinc-50 dark:bg-zinc-900"
+        seed={product.slug}
+        hasSnowCap={product.hasSnowCap}
+        lowColor={product.lowColor}
+        rockColor={product.rockColor}
+        className="h-56 w-full bg-stone-950"
       />
       <div className="flex flex-1 flex-col gap-1 p-4">
-        <h3 className="font-medium text-zinc-900 dark:text-zinc-50">
+        <h3 className="font-[family-name:var(--font-display)] text-lg text-stone-50">
           {product.name}
         </h3>
-        <p className="line-clamp-2 text-sm text-zinc-500 dark:text-zinc-400">
+        <p className="text-xs tracking-wide text-stone-500 uppercase">
+          {product.region} · {product.elevationM}m
+        </p>
+        <p className="mt-2 line-clamp-2 text-sm text-stone-400">
           {product.description}
         </p>
-        <p className="mt-2 font-semibold text-zinc-900 dark:text-zinc-50">
+        <p className="mt-2 font-medium text-amber-400">
           £{product.priceGBP.toFixed(2)}
         </p>
       </div>

@@ -16,16 +16,16 @@ export default function CheckoutPage() {
   if (placed) {
     return (
       <div className="flex flex-1 flex-col items-center justify-center gap-3 p-6 text-center">
-        <h1 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
+        <h1 className="font-[family-name:var(--font-display)] text-2xl text-stone-50">
           Order noted
         </h1>
-        <p className="max-w-sm text-zinc-600 dark:text-zinc-400">
+        <p className="max-w-sm text-stone-400">
           This is a placeholder checkout — nothing was charged and no order
           was actually placed. Real payment isn&apos;t wired up yet.
         </p>
         <Link
           href="/"
-          className="mt-2 rounded-full bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-zinc-700 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-300"
+          className="mt-2 rounded-full bg-amber-500 px-5 py-2.5 text-sm font-medium text-stone-950 hover:bg-amber-400"
         >
           Back to shop
         </Link>
@@ -36,14 +36,12 @@ export default function CheckoutPage() {
   if (lines.length === 0) {
     return (
       <div className="flex flex-1 flex-col items-center justify-center gap-4 p-6 text-center">
-        <p className="text-zinc-600 dark:text-zinc-400">
-          Your cart is empty — nothing to check out.
-        </p>
+        <p className="text-stone-400">Your cart is empty — nothing to check out.</p>
         <Link
           href="/"
-          className="rounded-full bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-zinc-700 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-300"
+          className="rounded-full bg-amber-500 px-5 py-2.5 text-sm font-medium text-stone-950 hover:bg-amber-400"
         >
-          Browse products
+          Browse peaks
         </Link>
       </div>
     );
@@ -51,10 +49,10 @@ export default function CheckoutPage() {
 
   return (
     <div className="mx-auto flex w-full max-w-md flex-1 flex-col gap-6 p-6">
-      <h1 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
+      <h1 className="font-[family-name:var(--font-display)] text-2xl text-stone-50">
         Checkout
       </h1>
-      <p className="rounded-lg bg-amber-50 px-4 py-3 text-sm text-amber-800 dark:bg-amber-900/30 dark:text-amber-300">
+      <p className="rounded-lg bg-amber-900/20 px-4 py-3 text-sm text-amber-300">
         Placeholder only — no payment provider is connected yet. Submitting
         just clears your cart.
       </p>
@@ -67,43 +65,41 @@ export default function CheckoutPage() {
         }}
         className="flex flex-col gap-4"
       >
-        <label className="flex flex-col gap-1 text-sm text-zinc-700 dark:text-zinc-300">
+        <label className="flex flex-col gap-1 text-sm text-stone-300">
           Name
           <input
             required
             type="text"
-            className="rounded-lg border border-zinc-300 px-3 py-2 dark:border-zinc-700 dark:bg-zinc-900"
+            className="rounded-lg border border-stone-700 bg-stone-900 px-3 py-2 text-stone-50"
           />
         </label>
-        <label className="flex flex-col gap-1 text-sm text-zinc-700 dark:text-zinc-300">
+        <label className="flex flex-col gap-1 text-sm text-stone-300">
           Email
           <input
             required
             type="email"
-            className="rounded-lg border border-zinc-300 px-3 py-2 dark:border-zinc-700 dark:bg-zinc-900"
+            className="rounded-lg border border-stone-700 bg-stone-900 px-3 py-2 text-stone-50"
           />
         </label>
-        <label className="flex flex-col gap-1 text-sm text-zinc-700 dark:text-zinc-300">
+        <label className="flex flex-col gap-1 text-sm text-stone-300">
           Delivery address
           <textarea
             required
             rows={3}
-            className="rounded-lg border border-zinc-300 px-3 py-2 dark:border-zinc-700 dark:bg-zinc-900"
+            className="rounded-lg border border-stone-700 bg-stone-900 px-3 py-2 text-stone-50"
           />
         </label>
 
-        <div className="flex items-center justify-between border-t border-zinc-200 pt-4 dark:border-zinc-800">
-          <span className="font-semibold text-zinc-900 dark:text-zinc-50">
-            Total
-          </span>
-          <span className="font-semibold text-zinc-900 dark:text-zinc-50">
+        <div className="flex items-center justify-between border-t border-stone-800 pt-4">
+          <span className="font-semibold text-stone-50">Total</span>
+          <span className="font-semibold text-stone-50">
             £{subtotal.toFixed(2)}
           </span>
         </div>
 
         <button
           type="submit"
-          className="w-full rounded-full bg-zinc-900 px-5 py-3 font-medium text-white hover:bg-zinc-700 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-300"
+          className="w-full rounded-full bg-amber-500 px-5 py-3 font-medium text-stone-950 hover:bg-amber-400"
         >
           Place order
         </button>

@@ -15,7 +15,7 @@ export function AddToCartButton({ slug }: { slug: string }) {
         setAdded(true);
         setTimeout(() => setAdded(false), 1500);
       }}
-      className="mt-4 w-full rounded-full bg-zinc-900 px-5 py-3 font-medium text-white transition-colors hover:bg-zinc-700 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-300"
+      className="mt-4 w-full rounded-full bg-amber-500 px-5 py-3 font-medium text-stone-950 transition-colors hover:bg-amber-400"
     >
       {added ? "Added ✓" : "Add to cart"}
     </button>

@@ -7,27 +7,27 @@ export function Header() {
   const { totalItems } = useCart();
 
   return (
-    <header className="flex items-center justify-between border-b border-zinc-200 px-6 py-4 dark:border-zinc-800">
+    <header className="flex items-center justify-between border-b border-stone-800 px-6 py-5">
       <Link
         href="/"
-        className="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-50"
+        className="font-[family-name:var(--font-display)] text-xl font-medium tracking-wide text-stone-50 italic"
       >
-        3D Web
+        Contour
       </Link>
       <nav className="flex items-center gap-6">
         <Link
           href="/"
-          className="text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
+          className="text-sm text-stone-400 hover:text-stone-50"
         >
-          All products
+          All peaks
         </Link>
         <Link
           href="/cart"
-          className="flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
+          className="flex items-center gap-2 text-sm text-stone-400 hover:text-stone-50"
         >
           Cart
           {totalItems > 0 && (
-            <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-zinc-900 px-1.5 text-xs font-medium text-white dark:bg-zinc-50 dark:text-zinc-900">
+            <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-amber-500 px-1.5 text-xs font-medium text-stone-950">
               {totalItems}
             </span>
           )}

@@ -19,30 +19,35 @@ export default async function ProductPage({
   return (
     <div className="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-8 p-6 sm:flex-row">
       <ProductViewer3D
-        shape={product.shape}
-        color={product.color}
+        seed={product.slug}
+        hasSnowCap={product.hasSnowCap}
+        lowColor={product.lowColor}
+        rockColor={product.rockColor}
         interactive
-        className="h-80 flex-1 rounded-2xl bg-zinc-50 dark:bg-zinc-900 sm:h-auto"
+        className="h-80 flex-1 rounded-2xl bg-stone-950 sm:h-auto"
       />
 
       <div className="flex flex-1 flex-col gap-3">
-        <h1 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
+        <p className="text-xs tracking-wide text-stone-500 uppercase">
+          {product.region}
+        </p>
+        <h1 className="font-[family-name:var(--font-display)] text-3xl text-stone-50">
           {product.name}
         </h1>
-        <p className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
+        <p className="text-lg font-medium text-amber-400">
           £{product.priceGBP.toFixed(2)}
         </p>
-        <p className="text-zinc-600 dark:text-zinc-400">
-          {product.description}
-        </p>
-        <dl className="mt-2 grid grid-cols-2 gap-2 text-sm text-zinc-500 dark:text-zinc-400">
+        <p className="text-stone-400">{product.description}</p>
+        <dl className="mt-2 grid grid-cols-2 gap-2 text-sm text-stone-500">
+          <dt>Elevation</dt>
+          <dd>{product.elevationM}m</dd>
           <dt>Material</dt>
           <dd>{product.material}</dd>
           <dt>Print time</dt>
           <dd>~{product.printTimeHours}h</dd>
         </dl>
         <AddToCartButton slug={product.slug} />
-        <p className="text-xs text-zinc-400">
+        <p className="text-xs text-stone-500">
           Checkout is a placeholder — no real payment is taken.
         </p>
       </div>
